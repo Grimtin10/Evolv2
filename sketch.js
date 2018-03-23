@@ -21,6 +21,7 @@ var energyLoss = 0.05;
 var minimumEnergy = 100;
 var startEnergy = 100;
 var foodAmount = 2000;
+var maxPop = 1000;
 
 var stat = -1;
 
@@ -44,6 +45,9 @@ function draw() {
     if(cells[j].mouseTouch()&&mouseIsPressed&&mouseButton==LEFT){
       stat = j;
       //console.log(stat);
+    }
+    if(population>1000&&random(0,100)>99.9){
+      cells[j].energy = 0;
     }
     cells[j].update(input);
   }
